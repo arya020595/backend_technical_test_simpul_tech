@@ -74,6 +74,7 @@ GEM
     ffi (1.15.5)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    httpclient (2.8.3)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     jwt (2.7.1)
@@ -100,6 +101,7 @@ GEM
       mongo (>= 2.18.0, < 3.0.0)
       ruby2_keywords (~> 0.0.5)
     msgpack (1.7.2)
+    multi_json (1.15.0)
     net-imap (0.3.7)
       date
       net-protocol
@@ -117,6 +119,11 @@ GEM
       method_source (~> 1.0)
     puma (5.6.7)
       nio4r (~> 2.0)
+    pusher (2.0.3)
+      httpclient (~> 2.8)
+      multi_json (~> 1.15)
+      pusher-signature (~> 0.1.8)
+    pusher-signature (0.1.8)
     racc (1.7.1)
     rack (2.2.8)
     rack-cors (2.0.1)
@@ -185,6 +192,7 @@ DEPENDENCIES
   mongoid
   pry
   puma (~> 5.0)
+  pusher
   rack-cors
   rails (~> 6.1.7, >= 6.1.7.6)
   spring

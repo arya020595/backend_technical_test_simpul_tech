@@ -6,6 +6,7 @@ class User
 
   field :username, type: String
   field :email, type: String
+  field :avatar, type: String
   field :password_digest, type: String
 
   validates :email, presence: true, uniqueness: true

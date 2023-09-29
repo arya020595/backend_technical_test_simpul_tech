@@ -16,9 +16,13 @@ class Conversation # ROOM
 
   def self.get(sender_id, recipient_id)
     conversation = between(sender_id, recipient_id).first
-    return conversation if conversation.present?
 
-    create(sender_id: sender_id, recipient_id: recipient_id)
+    if conversation.blank?
+      create(sender_id: sender_id, recipient_id: recipient_id) 
+      conversation = between(sender_id, recipient_id).first
+    end
+
+    {conversation: conversation, messages: conversation.messages}
   end
 
   def opposed_user(user)

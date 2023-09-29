@@ -13,6 +13,7 @@ class MessagesController < ApplicationController
     message = conversation.messages.create(message_params)
 
     if message.persisted?
+      Pusher.trigger('chat', 'new-message', message.as_json)
       render json: message, status: :created
     else
       render json: { errors: message.errors.full_messages }, status: :unprocessable_entity
